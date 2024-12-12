@@ -238,6 +238,27 @@ body {
   color: #ffffff;
 }
 
+.scroll-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  display: none;
+  z-index: 99;
+  border-radius: 50%;
+  padding: 10px 15px;
+  font-size: 1.5rem;
+  transition: opacity var(--transition-speed) ease;
+}
+
+.scroll-to-top.show {
+  display: block;
+  opacity: 0.7;
+}
+
+.scroll-to-top:hover {
+  opacity: 1;
+}
+
 .spinner-border {
   width: 3rem;
   height: 3rem;
