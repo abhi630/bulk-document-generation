@@ -3,21 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bulk Document Generation Tool</title>
+  <title>Bulk Document Generation Tool | Automate Your Workflow</title>
+  <meta name="description" content="Streamline your business processes with our Bulk Document Generation Tool. Automate the creation of personalized documents for Event Management, Government Services, Education, and HR.">
+  
+  <!-- Open Graph Meta Tags for Social Media -->
+  <meta property="og:title" content="Bulk Document Generation Tool | Automate Your Workflow">
+  <meta property="og:description" content="Streamline your business processes with our Bulk Document Generation Tool. Automate the creation of personalized documents for Event Management, Government Services, Education, and HR.">
+  <meta property="og:image" content="https://yourdomain.com/path-to-your-image.jpg">
+  <meta property="og:url" content="https://yourusername.github.io/">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bulk Document Generation Tool | Automate Your Workflow">
+  <meta name="twitter:description" content="Streamline your business processes with our Bulk Document Generation Tool. Automate the creation of personalized documents for Event Management, Government Services, Education, and HR.">
+  <meta name="twitter:image" content="https://yourdomain.com/path-to-your-image.jpg">
+  
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     /* Custom Styles */
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Open Sans', sans-serif;
       line-height: 1.6;
-      color: #333;
+      color: #343a40;
+      background-color: #ffffff;
     }
     .hero {
       background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
-      color: #fff;
+      color: #ffffff;
       padding: 100px 0;
       position: relative;
       text-align: center;
@@ -29,7 +47,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(13, 110, 253, 0.6); /* Primary color with opacity */
       z-index: 1;
     }
     .hero-content {
@@ -37,8 +55,9 @@
       z-index: 2;
     }
     .hero h1 {
+      font-family: 'Montserrat', sans-serif;
       font-size: 3rem;
-      font-weight: bold;
+      font-weight: 600;
       margin-bottom: 20px;
     }
     .hero p {
@@ -52,15 +71,19 @@
       transition: background-color 0.3s ease;
     }
     .cta-btn:hover {
-      background-color: #0056b3;
+      background-color: #0b5ed7; /* Darker shade of primary blue */
     }
     .use-case {
       text-align: center;
       padding: 20px;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 8px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     .use-case:hover {
       transform: translateY(-10px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
     }
     .use-case-icon {
       font-size: 3rem;
@@ -68,13 +91,14 @@
       margin-bottom: 15px;
     }
     .use-case-title {
+      font-family: 'Montserrat', sans-serif;
       font-size: 1.25rem;
-      font-weight: bold;
+      font-weight: 600;
       margin-bottom: 10px;
     }
     .use-case-description {
       font-size: 1rem;
-      color: #555;
+      color: #6c757d;
     }
     .benefits-list {
       list-style: none;
@@ -95,6 +119,7 @@
       padding: 30px;
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
     .testimonial p {
       font-style: italic;
@@ -104,11 +129,17 @@
       display: block;
       margin-top: 15px;
       font-weight: bold;
-      color: #333;
+      color: #343a40;
+    }
+    .testimonial-carousel .carousel-control-prev-icon,
+    .testimonial-carousel .carousel-control-next-icon {
+      background-color: #0d6efd;
+      border-radius: 50%;
+      padding: 10px;
     }
     .email-capture {
-      background: #0d6efd;
-      color: #fff;
+      background-color: #0d6efd;
+      color: #ffffff;
       padding: 60px 0;
       text-align: center;
     }
@@ -124,6 +155,21 @@
       max-width: 400px;
       margin: 0 auto 20px;
       display: block;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+    .email-capture button {
+      padding: 10px 25px;
+      border-radius: 50px;
+      border: none;
+      background-color: #ffc107;
+      color: #343a40;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+    .email-capture button:hover {
+      background-color: #e0a800;
     }
     .faq-section {
       padding: 60px 0;
@@ -133,8 +179,8 @@
       text-align: center;
     }
     .footer {
-      background: #343a40;
-      color: #fff;
+      background-color: #343a40;
+      color: #ffffff;
       padding: 30px 0;
       text-align: center;
     }
@@ -145,7 +191,19 @@
       font-size: 1.2rem;
     }
     .footer a:hover {
-      color: #fff;
+      color: #ffffff;
+    }
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .use-case-icon {
+        font-size: 2.5rem;
+      }
     }
   </style>
 </head>
@@ -156,7 +214,7 @@
     <div class="container hero-content">
       <h1>Effortlessly Generate Professional Documents in Bulk</h1>
       <p>Streamline your workflow with automated, personalized document generation tailored to your business needs.</p>
-      <a href="#email-capture" class="btn btn-primary cta-btn">Get Started Now</a>
+      <a href="#email-capture" class="btn btn-warning cta-btn">Get Started Now</a>
     </div>
   </section>
 
@@ -359,7 +417,7 @@
   <section class="py-5">
     <div class="container">
       <h2 class="mb-5 text-center">What Our Users Say</h2>
-      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div id="testimonialCarousel" class="carousel slide testimonial-carousel" data-bs-ride="carousel">
         <div class="carousel-inner">
           <!-- Testimonial 1 -->
           <div class="carousel-item active">
@@ -385,11 +443,11 @@
         </div>
         <!-- Controls -->
         <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon bg-primary rounded-circle p-3" aria-hidden="true"></span>
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon bg-primary rounded-circle p-3" aria-hidden="true"></span>
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
