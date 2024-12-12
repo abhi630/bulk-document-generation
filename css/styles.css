@@ -1,22 +1,24 @@
 /* styles.css */
 
-/* CSS Variables for Easy Theming */
+/* CSS Variables for Modern and Sleek Theming */
 :root {
   /* Color Palette */
-  --primary-color: #0d6efd;
-  --secondary-color: #6c757d;
-  --accent-color: #ffc107;
-  --background-color: #ffffff;
-  --text-color: #343a40;
-  --light-gray: #f8f9fa;
-
+  --primary-color: #1E2A38;       /* Deep Navy Blue */
+  --secondary-color: #F5F5F5;     /* Soft Gray */
+  --accent-color: #00C4CC;        /* Vibrant Teal */
+  --highlight-color: #FF8C42;     /* Warm Orange */
+  --text-color: #333333;          /* Dark Charcoal */
+  --background-color: #F5F5F5;    /* Soft Gray */
+  --dark-mode-background: #121B22; /* Very Dark Blue */
+  --dark-mode-text: #E0E0E0;      /* Light Gray */
+  
   /* Fonts */
   --heading-font: 'Montserrat', sans-serif;
   --body-font: 'Open Sans', sans-serif;
-
+  
   /* Spacing */
   --section-padding: 80px 0;
-
+  
   /* Transition */
   --transition-speed: 0.3s;
 }
@@ -27,36 +29,36 @@ body {
   color: var(--text-color);
   background-color: var(--background-color);
   padding-top: 70px; /* To prevent content hiding behind the navbar */
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+.navbar {
+  background-color: var(--primary-color);
+  transition: background-color var(--transition-speed) ease;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+  color: var(--background-color) !important;
+}
+
+.navbar .nav-link:hover {
+  color: var(--accent-color) !important;
 }
 
 .hero {
-  background: linear-gradient(rgba(13, 110, 253, 0.6), rgba(13, 110, 253, 0.6)), url('../images/hero-background.jpg') no-repeat center center/cover;
-  color: #ffffff;
+  background: linear-gradient(rgba(30, 42, 56, 0.8), rgba(30, 42, 56, 0.8)), url('../images/hero-background.jpg') no-repeat center center/cover;
+  color: var(--background-color);
   padding: var(--section-padding);
   position: relative;
   text-align: center;
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* The gradient overlay is already applied in the background property */
-  z-index: 1;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
+  transition: background-color var(--transition-speed) ease;
 }
 
 .hero h1 {
   font-family: var(--heading-font);
   font-size: 3rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
@@ -76,19 +78,20 @@ body {
 }
 
 .cta-btn:hover {
-  background-color: #e0a800; /* Slightly darker shade of #ffc107 */
+  background-color: var(--highlight-color);
   transform: scale(1.05);
 }
 
 .benefits-section {
   padding: var(--section-padding);
-  background-color: var(--light-gray);
+  background-color: var(--secondary-color);
 }
 
 .benefits-section h2 {
   margin-bottom: 40px;
   text-align: center;
   font-family: var(--heading-font);
+  color: var(--primary-color);
 }
 
 .benefits-list {
@@ -105,13 +108,21 @@ body {
 
 .benefits-list li i {
   font-size: 1.5rem;
-  color: var(--primary-color);
+  color: var(--accent-color);
   margin-right: 15px;
   transition: color var(--transition-speed) ease;
 }
 
 .benefits-list li:hover i {
-  color: var(--accent-color);
+  color: var(--highlight-color);
+}
+
+.benefits-list li h5 {
+  color: var(--primary-color);
+}
+
+.benefits-list li p {
+  color: var(--text-color);
 }
 
 .use-cases-section {
@@ -122,6 +133,7 @@ body {
   margin-bottom: 40px;
   text-align: center;
   font-family: var(--heading-font);
+  color: var(--primary-color);
 }
 
 .use-case {
@@ -129,7 +141,7 @@ body {
   padding: 20px;
   transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
   border-radius: 8px;
-  background-color: var(--background-color);
+  background-color: var(--secondary-color);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -140,33 +152,35 @@ body {
 
 .use-case-icon {
   font-size: 3rem;
-  color: var(--primary-color);
+  color: var(--accent-color);
   margin-bottom: 15px;
   transition: transform var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 
 .use-case:hover .use-case-icon {
   transform: scale(1.2) rotate(10deg);
-  color: var(--accent-color);
+  color: var(--highlight-color);
 }
 
 .use-case-title {
   font-family: var(--heading-font);
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 10px;
+  color: var(--primary-color);
 }
 
 .use-case-description {
   font-size: 1rem;
-  color: #6c757d;
+  color: var(--text-color);
 }
 
 .email-capture {
   background-color: var(--primary-color);
-  color: #ffffff;
+  color: var(--background-color);
   padding: var(--section-padding);
   text-align: center;
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 
 .email-capture h2 {
@@ -183,20 +197,20 @@ body {
   max-width: 400px;
   margin: 0 auto 20px;
   display: block;
-  padding: 10px;
+  padding: 12px 15px;
   border-radius: 5px;
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--accent-color);
   transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 }
 
 .email-capture input[type="email"]:focus {
-  border-color: var(--accent-color);
-  box-shadow: 0 0 5px rgba(255, 193, 7, 0.5);
+  border-color: var(--highlight-color);
+  box-shadow: 0 0 5px rgba(0, 196, 204, 0.5);
   outline: none;
 }
 
 .email-capture button {
-  padding: 10px 25px;
+  padding: 12px 25px;
   border-radius: 50px;
   border: none;
   background-color: var(--accent-color);
@@ -206,25 +220,49 @@ body {
 }
 
 .email-capture button:hover {
-  background-color: #e0a800; /* Slightly darker shade of #ffc107 */
+  background-color: var(--highlight-color);
   transform: scale(1.05);
 }
 
 .faq-section {
   padding: var(--section-padding);
+  background-color: var(--secondary-color);
 }
 
 .faq-section h2 {
   margin-bottom: 40px;
   text-align: center;
   font-family: var(--heading-font);
+  color: var(--primary-color);
+}
+
+.accordion-button {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+}
+
+.accordion-button:hover {
+  background-color: var(--highlight-color);
+  color: var(--text-color);
+}
+
+.accordion-body {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
 }
 
 .footer {
-  background-color: #343a40;
-  color: #ffffff;
+  background-color: var(--primary-color);
+  color: var(--background-color);
   padding: 30px 0;
   text-align: center;
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 
 .footer a {
@@ -232,10 +270,15 @@ body {
   text-decoration: none;
   margin: 0 10px;
   font-size: 1.2rem;
+  transition: color var(--transition-speed) ease;
 }
 
 .footer a:hover {
-  color: #ffffff;
+  color: var(--highlight-color);
+}
+
+.footer p {
+  margin-bottom: 10px;
 }
 
 .scroll-to-top {
@@ -247,7 +290,9 @@ body {
   border-radius: 50%;
   padding: 10px 15px;
   font-size: 1.5rem;
-  transition: opacity var(--transition-speed) ease;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  transition: opacity var(--transition-speed) ease, background-color var(--transition-speed) ease;
 }
 
 .scroll-to-top.show {
@@ -257,11 +302,80 @@ body {
 
 .scroll-to-top:hover {
   opacity: 1;
+  background-color: var(--highlight-color);
 }
 
 .spinner-border {
   width: 3rem;
   height: 3rem;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: var(--dark-mode-background);
+  color: var(--dark-mode-text);
+}
+
+body.dark-mode .navbar {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode .hero {
+  background: linear-gradient(rgba(18, 27, 34, 0.8), rgba(18, 27, 34, 0.8)), url('../images/hero-background.jpg') no-repeat center center/cover;
+}
+
+body.dark-mode .benefits-section {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode .use-cases-section {
+  background-color: var(--dark-mode-background);
+}
+
+body.dark-mode .footer {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode .btn-warning {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+}
+
+body.dark-mode .btn-warning:hover {
+  background-color: var(--highlight-color);
+}
+
+body.dark-mode .email-capture {
+  background-color: var(--dark-mode-background);
+  color: var(--dark-mode-text);
+}
+
+body.dark-mode .accordion-button {
+  background-color: #1f1f1f;
+  color: var(--dark-mode-text);
+}
+
+body.dark-mode .accordion-button:not(.collapsed) {
+  background-color: var(--accent-color);
+  color: var(--dark-mode-text);
+}
+
+body.dark-mode .accordion-body {
+  background-color: var(--dark-mode-background);
+  color: var(--dark-mode-text);
+}
+
+body.dark-mode .footer a {
+  color: var(--accent-color);
+}
+
+body.dark-mode .scroll-to-top {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+}
+
+body.dark-mode .scroll-to-top:hover {
+  background-color: var(--highlight-color);
 }
 
 /* Responsive Adjustments */
