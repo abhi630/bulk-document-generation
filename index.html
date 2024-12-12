@@ -9,7 +9,7 @@
   <!-- Open Graph Meta Tags for Social Media -->
   <meta property="og:title" content="Bulk Document Generation Tool | Automate Your Workflow">
   <meta property="og:description" content="Streamline your business processes with our Bulk Document Generation Tool. Automate the creation of personalized documents for Event Management, Government Services, Education, and HR.">
-  <meta property="og:image" content="https://yourdomain.com/path-to-your-image.jpg">
+  <meta property="og:image" content="https://yourusername.github.io/images/og-image.jpg">
   <meta property="og:url" content="https://yourusername.github.io/">
   <meta property="og:type" content="website">
   
@@ -17,14 +17,17 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Bulk Document Generation Tool | Automate Your Workflow">
   <meta name="twitter:description" content="Streamline your business processes with our Bulk Document Generation Tool. Automate the creation of personalized documents for Event Management, Government Services, Education, and HR.">
-  <meta name="twitter:image" content="https://yourdomain.com/path-to-your-image.jpg">
+  <meta name="twitter:image" content="https://yourusername.github.io/images/twitter-image.jpg">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
   
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  
   <style>
     /* Custom Styles */
     body {
@@ -34,7 +37,7 @@
       background-color: #ffffff;
     }
     .hero {
-      background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+      background: url('https://yourusername.github.io/images/hero-background.jpg') no-repeat center center/cover;
       color: #ffffff;
       padding: 100px 0;
       position: relative;
@@ -73,6 +76,28 @@
     .cta-btn:hover {
       background-color: #0b5ed7; /* Darker shade of primary blue */
     }
+    .benefits-section {
+      padding: 60px 0;
+      background-color: #f8f9fa;
+    }
+    .benefits-section h2 {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .benefits-list {
+      list-style: none;
+      padding: 0;
+    }
+    .benefits-list li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .benefits-list li i {
+      font-size: 1.5rem;
+      color: #0d6efd;
+      margin-right: 15px;
+    }
     .use-case {
       text-align: center;
       padding: 20px;
@@ -90,12 +115,6 @@
       color: #0d6efd;
       margin-bottom: 15px;
     }
-    .use-case-image {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
     .use-case-title {
       font-family: 'Montserrat', sans-serif;
       font-size: 1.25rem;
@@ -106,19 +125,12 @@
       font-size: 1rem;
       color: #6c757d;
     }
-    .benefits-list {
-      list-style: none;
-      padding: 0;
+    .use-cases-section {
+      padding: 60px 0;
     }
-    .benefits-list li {
-      display: flex;
-      align-items: center;
-      margin-bottom: 15px;
-    }
-    .benefits-list li i {
-      font-size: 1.5rem;
-      color: #0d6efd;
-      margin-right: 15px;
+    .use-cases-section h2 {
+      margin-bottom: 40px;
+      text-align: center;
     }
     .testimonial {
       background: #f8f9fa;
@@ -224,8 +236,59 @@
     </div>
   </section>
 
+  <!-- Benefits Section -->
+  <section class="benefits-section">
+    <div class="container">
+      <h2>Why Choose Our Bulk Document Generation Tool?</h2>
+      <ul class="benefits-list">
+        <li>
+          <i class="bi bi-clock-fill"></i>
+          <div>
+            <h5>Save Time</h5>
+            <p>Automate document creation and reduce manual workload, allowing your team to focus on more important tasks.</p>
+          </div>
+        </li>
+        <li>
+          <i class="bi bi-pencil-fill"></i>
+          <div>
+            <h5>Ensure Consistency</h5>
+            <p>Maintain a uniform look and feel across all documents, enhancing your brand's professionalism.</p>
+          </div>
+        </li>
+        <li>
+          <i class="bi bi-bar-chart-line-fill"></i>
+          <div>
+            <h5>Scale Your Operations</h5>
+            <p>Effortlessly handle large volumes of documents as your business grows, without increasing your workload.</p>
+          </div>
+        </li>
+        <li>
+          <i class="bi bi-gear-fill"></i>
+          <div>
+            <h5>Seamless Integration</h5>
+            <p>Integrate our tool with your existing systems for a smooth and efficient workflow.</p>
+          </div>
+        </li>
+        <li>
+          <i class="bi bi-shield-lock-fill"></i>
+          <div>
+            <h5>Secure and Compliant</h5>
+            <p>Ensure your documents are secure and comply with industry regulations and standards.</p>
+          </div>
+        </li>
+        <li>
+          <i class="bi bi-award-fill"></i>
+          <div>
+            <h5>High Customizability</h5>
+            <p>Personalize your documents easily with customizable templates to meet your specific needs.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
   <!-- Features/Use Cases Section -->
-  <section class="py-5">
+  <section class="use-cases-section">
     <div class="container">
       <h2 class="mb-5 text-center">Our Bulk Templates</h2>
 
@@ -236,8 +299,7 @@
           <!-- Invitations -->
           <div class="col-md-4">
             <div class="use-case">
-              <!-- Replace the icon with an image -->
-              <img src="https://via.placeholder.com/300x200" alt="Personalized Invitations" class="use-case-image">
+              <i class="bi bi-envelope-fill use-case-icon"></i>
               <h4 class="use-case-title">Invitations</h4>
               <p class="use-case-description">Bulk generation of personalized invitations for attendees.</p>
             </div>
@@ -245,7 +307,7 @@
           <!-- Badges and Passes -->
           <div class="col-md-4">
             <div class="use-case">
-              <img src="https://via.placeholder.com/300x200" alt="Badges and Passes" class="use-case-image">
+              <i class="bi bi-person-circle use-case-icon"></i>
               <h4 class="use-case-title">Badges and Passes</h4>
               <p class="use-case-description">Creating name badges or access passes for participants.</p>
             </div>
@@ -253,7 +315,7 @@
           <!-- Event Certificates -->
           <div class="col-md-4">
             <div class="use-case">
-              <img src="https://via.placeholder.com/300x200" alt="Event Certificates" class="use-case-image">
+              <i class="bi bi-award-fill use-case-icon"></i>
               <h4 class="use-case-title">Event Certificates</h4>
               <p class="use-case-description">Issuing participation or speaker certificates post-event.</p>
             </div>
@@ -268,7 +330,7 @@
           <!-- Certificates and IDs -->
           <div class="col-md-4">
             <div class="use-case">
-              <img src="https://via.placeholder.com/300x200" alt="Certificates and IDs" class="use-case-image">
+              <i class="bi bi-file-earmark-text-fill use-case-icon"></i>
               <h4 class="use-case-title">Certificates and IDs</h4>
               <p class="use-case-description">Generating certificates like birth, marriage, or death certificates based on applications.</p>
             </div>
@@ -276,7 +338,7 @@
           <!-- Permits and Licenses -->
           <div class="col-md-4">
             <div class="use-case">
-              <img src="https://via.placeholder.com/300x200" alt="Permits and Licenses" class="use-case-image">
+              <i class="bi bi-file-earmark-lock-fill use-case-icon"></i>
               <h4 class="use-case-title">Permits and Licenses</h4>
               <p class="use-case-description">Automating creation of driving licenses, trade licenses, or building permits.</p>
             </div>
@@ -284,7 +346,7 @@
           <!-- Notices and Invitations -->
           <div class="col-md-4">
             <div class="use-case">
-              <img src="https://via.placeholder.com/300x200" alt="Notices and Invitations" class="use-case-image">
+              <i class="bi bi-megaphone-fill use-case-icon"></i>
               <h4 class="use-case-title">Notices and Invitations</h4>
               <p class="use-case-description">Sending personalized notices or event invitations to constituents.</p>
             </div>
@@ -299,7 +361,7 @@
           <!-- Certificates -->
           <div class="col-md-4">
             <div class="use-case">
-              <img src="https://via.placeholder.com/300x200" alt="Certificates" class="use-case-image">
+              <i class="bi bi-file-earmark-check-fill use-case-icon"></i>
               <h4 class="use-case-title">Certificates</h4>
               <p class="use-case-description">Issuing participation or achievement certificates for students or trainees.</p>
             </div>
@@ -307,7 +369,7 @@
           <!-- Student Reports -->
           <div class="col-md-4">
             <div class="use-case">
-              <img src="https://via.placeholder.com/300x200" alt="Student Reports" class="use-case-image">
+              <i class="bi bi-bar-chart-fill use-case-icon"></i>
               <h4 class="use-case-title">Student Reports</h4>
               <p class="use-case-description">Generating grade reports, attendance sheets, or feedback summaries.</p>
             </div>
@@ -323,7 +385,7 @@
           <!-- Offer Letters and Appointment Letters -->
           <div class="col-md-4">
             <div class="use-case">
-              <img src="https://via.placeholder.com/300x200" alt="Offer Letters and Appointment Letters" class="use-case-image">
+              <i class="bi bi-file-earmark-person-fill use-case-icon"></i>
               <h4 class="use-case-title">Offer Letters and Appointment Letters</h4>
               <p class="use-case-description">Automatically generating offer letters for multiple candidates during a recruitment drive.</p>
             </div>
@@ -331,7 +393,7 @@
           <!-- Employee Certificates -->
           <div class="col-md-4">
             <div class="use-case">
-              <img src="https://via.placeholder.com/300x200" alt="Employee Certificates" class="use-case-image">
+              <i class="bi bi-award-fill use-case-icon"></i>
               <h4 class="use-case-title">Employee Certificates</h4>
               <p class="use-case-description">Issuing bulk experience letters, salary certificates, or training completion certificates.</p>
             </div>
@@ -342,71 +404,6 @@
 
     </div>
   </section>
-
-  <!-- Benefits Section -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <h2 class="mb-5 text-center">Why Choose Our Bulk Document Generation Tool?</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="d-flex align-items-start">
-            <i class="bi bi-clock-fill text-primary me-3" style="font-size: 2rem;"></i>
-            <div>
-              <h5>Save Time</h5>
-              <p>Automate document creation and reduce manual workload, allowing your team to focus on more important tasks.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="d-flex align-items-start">
-            <i class="bi bi-pencil-fill text-primary me-3" style="font-size: 2rem;"></i>
-            <div>
-              <h5>Ensure Consistency</h5>
-              <p>Maintain a uniform look and feel across all documents, enhancing your brand's professionalism.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="d-flex align-items-start">
-            <i class="bi bi-bar-chart-line-fill text-primary me-3" style="font-size: 2rem;"></i>
-            <div>
-              <h5>Scale Your Operations</h5>
-              <p>Effortlessly handle large volumes of documents as your business grows, without increasing your workload.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="d-flex align-items-start">
-            <i class="bi bi-gear-fill text-primary me-3" style="font-size: 2rem;"></i>
-            <div>
-              <h5>Seamless Integration</h5>
-              <p>Integrate our tool with your existing systems for a smooth and efficient workflow.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="d-flex align-items-start">
-            <i class="bi bi-shield-lock-fill text-primary me-3" style="font-size: 2rem;"></i>
-            <div>
-              <h5>Secure and Compliant</h5>
-              <p>Ensure your documents are secure and comply with industry regulations and standards.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="d-flex align-items-start">
-            <i class="bi bi-award-fill text-primary me-3" style="font-size: 2rem;"></i>
-            <div>
-              <h5>High Customizability</h5>
-              <p>Personalize your documents easily with customizable templates to meet your specific needs.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Removed Testimonials Section -->
 
   <!-- Email Capture Section -->
   <section id="email-capture" class="email-capture">
