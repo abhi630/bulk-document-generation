@@ -47,4 +47,34 @@ document.addEventListener('DOMContentLoaded', function() {
       formMessage.innerHTML = '<div class="alert alert-danger">Oops! Something went wrong.</div>';
     });
   });
+
+  // Dark Mode Toggle
+  const darkModeToggle = document.getElementById('darkModeToggle');
+
+  darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    if (document.body.classList.contains('dark-mode')) {
+      darkModeToggle.textContent = 'Light Mode';
+    } else {
+      darkModeToggle.textContent = 'Dark Mode';
+    }
+  });
+
+  // Scroll to Top Button
+  const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      scrollToTopBtn.classList.add('show');
+    } else {
+      scrollToTopBtn.classList.remove('show');
+    }
+  });
+
+  scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
 });
