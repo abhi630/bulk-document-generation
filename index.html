@@ -1,29 +1,344 @@
-<script>
-  document.querySelector('form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const form = event.target;
-    const formData = new FormData(form);
-    fetch(form.action, {
-      method: form.method,
-      body: formData,
-      headers: {
-        'Accept': 'application/json'
-      }
-    }).then(response => {
-      if (response.ok) {
-        form.reset();
-        document.getElementById('formMessage').innerHTML = '<div class="alert alert-success">Thank you! You have been added to the waitlist.</div>';
-      } else {
-        response.json().then(data => {
-          if (Object.hasOwn(data, 'errors')) {
-            document.getElementById('formMessage').innerHTML = '<div class="alert alert-danger">' + data.errors.map(error => error.message).join(', ') + '</div>';
-          } else {
-            document.getElementById('formMessage').innerHTML = '<div class="alert alert-danger">Oops! Something went wrong.</div>';
-          }
-        });
-      }
-    }).catch(error => {
-      document.getElementById('formMessage').innerHTML = '<div class="alert alert-danger">Oops! Something went wrong.</div>';
-    });
-  });
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bulk Document Generation Tool | Automate Your Workflow</title>
+  <meta name="description" content="Streamline your business processes with our Bulk Document Generation Tool. Automate the creation of personalized documents for Event Management, Government Services, Education, and HR.">
+
+  <!-- Open Graph Meta Tags for Social Media -->
+  <meta property="og:title" content="Bulk Document Generation Tool | Automate Your Workflow">
+  <meta property="og:description" content="Streamline your business processes with our Bulk Document Generation Tool. Automate the creation of personalized documents for Event Management, Government Services, Education, and HR.">
+  <meta property="og:image" content="https://yourusername.github.io/images/og-image.jpg">
+  <meta property="og:url" content="https://yourusername.github.io/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bulk Document Generation Tool | Automate Your Workflow">
+  <meta name="twitter:description" content="Streamline your business processes with our Bulk Document Generation Tool. Automate the creation of personalized documents for Event Management, Government Services, Education, and HR.">
+  <meta name="twitter:image" content="https://yourusername.github.io/images/twitter-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <!-- External CSS -->
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
+    <div class="container">
+      <a class="navbar-brand" href="#">DocumentGen</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#benefits-section">Benefits</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#use-cases-section">Templates</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#email-capture">Join Waitlist</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#faq-section">FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Effortlessly Generate Professional Documents in Bulk</h1>
+      <p>Streamline your workflow with automated, personalized document generation tailored to your business needs.</p>
+      <a href="#email-capture" class="btn btn-warning cta-btn">Get Started Now</a>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section id="benefits-section" class="benefits-section">
+    <div class="container">
+      <h2>Why Choose Our Bulk Document Generation Tool?</h2>
+      <ul class="benefits-list">
+        <li>
+          <i class="bi bi-clock-fill"></i>
+          <div>
+            <h5>Save Time</h5>
+            <p>Automate document creation and reduce manual workload, allowing your team to focus on more important tasks.</p>
+          </div>
+        </li>
+        <li>
+          <i class="bi bi-pencil-fill"></i>
+          <div>
+            <h5>Ensure Consistency</h5>
+            <p>Maintain a uniform look and feel across all documents, enhancing your brand's professionalism.</p>
+          </div>
+        </li>
+        <li>
+          <i class="bi bi-bar-chart-line-fill"></i>
+          <div>
+            <h5>Scale Your Operations</h5>
+            <p>Effortlessly handle large volumes of documents as your business grows, without increasing your workload.</p>
+          </div>
+        </li>
+        <li>
+          <i class="bi bi-gear-fill"></i>
+          <div>
+            <h5>Seamless Integration</h5>
+            <p>Integrate our tool with your existing systems for a smooth and efficient workflow.</p>
+          </div>
+        </li>
+        <li>
+          <i class="bi bi-shield-lock-fill"></i>
+          <div>
+            <h5>Secure and Compliant</h5>
+            <p>Ensure your documents are secure and comply with industry regulations and standards.</p>
+          </div>
+        </li>
+        <li>
+          <i class="bi bi-award-fill"></i>
+          <div>
+            <h5>High Customizability</h5>
+            <p>Personalize your documents easily with customizable templates to meet your specific needs.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Features/Use Cases Section -->
+  <section id="use-cases-section" class="use-cases-section">
+    <div class="container">
+      <h2 class="mb-5 text-center">Our Bulk Templates</h2>
+
+      <!-- Event Management -->
+      <div class="mb-5">
+        <h3 class="mb-4">Event Management</h3>
+        <div class="row g-4">
+          <!-- Invitations -->
+          <div class="col-md-4">
+            <div class="use-case">
+              <i class="bi bi-envelope-fill use-case-icon" aria-label="Invitations"></i>
+              <h4 class="use-case-title">Invitations</h4>
+              <p class="use-case-description">Bulk generation of personalized invitations for attendees.</p>
+            </div>
+          </div>
+          <!-- Badges and Passes -->
+          <div class="col-md-4">
+            <div class="use-case">
+              <i class="bi bi-person-circle use-case-icon" aria-label="Badges and Passes"></i>
+              <h4 class="use-case-title">Badges and Passes</h4>
+              <p class="use-case-description">Creating name badges or access passes for participants.</p>
+            </div>
+          </div>
+          <!-- Event Certificates -->
+          <div class="col-md-4">
+            <div class="use-case">
+              <i class="bi bi-award-fill use-case-icon" aria-label="Event Certificates"></i>
+              <h4 class="use-case-title">Event Certificates</h4>
+              <p class="use-case-description">Issuing participation or speaker certificates post-event.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Government and Public Services -->
+      <div class="mb-5">
+        <h3 class="mb-4">Government and Public Services</h3>
+        <div class="row g-4">
+          <!-- Certificates and IDs -->
+          <div class="col-md-4">
+            <div class="use-case">
+              <i class="bi bi-file-earmark-text-fill use-case-icon" aria-label="Certificates and IDs"></i>
+              <h4 class="use-case-title">Certificates and IDs</h4>
+              <p class="use-case-description">Generating certificates like birth, marriage, or death certificates based on applications.</p>
+            </div>
+          </div>
+          <!-- Permits and Licenses -->
+          <div class="col-md-4">
+            <div class="use-case">
+              <i class="bi bi-file-earmark-lock-fill use-case-icon" aria-label="Permits and Licenses"></i>
+              <h4 class="use-case-title">Permits and Licenses</h4>
+              <p class="use-case-description">Automating creation of driving licenses, trade licenses, or building permits.</p>
+            </div>
+          </div>
+          <!-- Notices and Invitations -->
+          <div class="col-md-4">
+            <div class="use-case">
+              <i class="bi bi-megaphone-fill use-case-icon" aria-label="Notices and Invitations"></i>
+              <h4 class="use-case-title">Notices and Invitations</h4>
+              <p class="use-case-description">Sending personalized notices or event invitations to constituents.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education and Training -->
+      <div class="mb-5">
+        <h3 class="mb-4">Education and Training</h3>
+        <div class="row g-4">
+          <!-- Certificates -->
+          <div class="col-md-4">
+            <div class="use-case">
+              <i class="bi bi-file-earmark-check-fill use-case-icon" aria-label="Certificates"></i>
+              <h4 class="use-case-title">Certificates</h4>
+              <p class="use-case-description">Issuing participation or achievement certificates for students or trainees.</p>
+            </div>
+          </div>
+          <!-- Student Reports -->
+          <div class="col-md-4">
+            <div class="use-case">
+              <i class="bi bi-bar-chart-fill use-case-icon" aria-label="Student Reports"></i>
+              <h4 class="use-case-title">Student Reports</h4>
+              <p class="use-case-description">Generating grade reports, attendance sheets, or feedback summaries.</p>
+            </div>
+          </div>
+          <!-- Placeholder for future use cases -->
+          <div class="col-md-4">
+            <!-- You can add more use cases here in the future -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Human Resources -->
+      <div class="mb-5">
+        <h3 class="mb-4">Human Resources</h3>
+        <div class="row g-4">
+          <!-- Offer Letters and Appointment Letters -->
+          <div class="col-md-4">
+            <div class="use-case">
+              <i class="bi bi-file-earmark-person-fill use-case-icon" aria-label="Offer Letters and Appointment Letters"></i>
+              <h4 class="use-case-title">Offer Letters and Appointment Letters</h4>
+              <p class="use-case-description">Automatically generating offer letters for multiple candidates during a recruitment drive.</p>
+            </div>
+          </div>
+          <!-- Employee Certificates -->
+          <div class="col-md-4">
+            <div class="use-case">
+              <i class="bi bi-award-fill use-case-icon" aria-label="Employee Certificates"></i>
+              <h4 class="use-case-title">Employee Certificates</h4>
+              <p class="use-case-description">Issuing bulk experience letters, salary certificates, or training completion certificates.</p>
+            </div>
+          </div>
+          <!-- Placeholder for future use cases -->
+          <div class="col-md-4">
+            <!-- You can add more use cases here in the future -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Email Capture Section -->
+  <section id="email-capture" class="email-capture">
+    <div class="container">
+      <h2 class="mb-4">Stay Updated</h2>
+      <p>Join our waitlist to be the first to experience seamless bulk document generation.</p>
+      <!-- Formspree Form Start -->
+      <form class="row g-3 justify-content-center" action="https://formspree.io/f/your_form_id" method="POST">
+        <div class="col-md-6 col-sm-8">
+          <input type="email" name="email" class="form-control" id="emailInput" placeholder="Enter your email" required>
+        </div>
+        <div class="col-md-2 col-sm-4">
+          <button type="submit" class="btn btn-warning w-100">Join Waitlist</button>
+        </div>
+      </form>
+      <!-- Success/Error Messages -->
+      <div id="formMessage" class="mt-3"></div>
+      <!-- Formspree Form End -->
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="mb-5 text-center">Frequently Asked Questions</h2>
+      <div class="accordion" id="faqAccordion">
+        <!-- FAQ 1 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+              What types of documents can I generate in bulk?
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              You can generate a wide range of documents including invitations, certificates, reports, agreements, and more across various industries like event management, government services, education, and human resources.
+            </div>
+          </div>
+        </div>
+        <!-- FAQ 2 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+              How customizable are the templates?
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Our templates are highly customizable. You can personalize them with your company’s branding, individual recipient details, and specific content to suit your needs.
+            </div>
+          </div>
+        </div>
+        <!-- FAQ 3 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+              Can I integrate this tool with my existing systems?
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes, our tool is designed to integrate seamlessly with various CRM, HR, and event management systems, allowing for smooth data transfer and automation.
+            </div>
+          </div>
+        </div>
+        <!-- Add more FAQs as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Bulk Document Generation Tool. All rights reserved.</p>
+      <p>
+        <a href="#">Privacy Policy</a> | 
+        <a href="#">Terms of Service</a> | 
+        <a href="#">Contact Us</a>
+      </p>
+      <p>
+        Follow us:
+        <a href="#" class="text-warning"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-warning"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="text-warning"><i class="bi bi-linkedin"></i></a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- External JavaScript -->
+  <script src="js/scripts.js"></script>
+</body>
+</html>
